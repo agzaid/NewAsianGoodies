@@ -9,11 +9,12 @@
       "Repo/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "Data": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.6",
           "System.Linq.Dynamic.Core": "1.2.19",
-          "Data": "1.0.0.0"
+          "Data.Reference": "1.0.0.0"
         },
         "runtime": {
           "Repo.dll": {}
@@ -574,7 +575,7 @@
           }
         }
       },
-      "Data/1.0.0.0": {
+      "Data.Reference/1.0.0.0": {
         "runtime": {
           "Data.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -947,7 +948,7 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "Data/1.0.0.0": {
+    "Data.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

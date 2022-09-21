@@ -1,9 +1,16 @@
-﻿$(document).ready(function () {
-    $("#Products").dataTable({
+﻿
+$(document).ready(function () {
+    debugger;
+    var AGelem = $(".AG-data-table");
+    var AGelemID = AGelem[0].id;
+    var AGelemColumns = $("#" + AGelemID).attr("data-AG-columns");
+    var url = $("#" + AGelemID).attr("data-AG-load-url");
+
+    $("#" + AGelemID).dataTable({
         "serverSide": true,
         "filter": true,
         "ajax": {
-            "url": "/en/Admin/Product/LoadProducts",
+            "url": url,
             "type": "POST",
             "datatype": "json"
         },

@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Entities;
 using Data.Entities.Shop;
 using Data.Entities.User;
 using Data.Mapping;
@@ -25,6 +26,8 @@ namespace Repo
         //}
         #endregion
         public DbSet<Product> Product { get; set; }
+        //public DbSet<Order> Product { get; set; }
+        //public DbSet<Category> Category { get; set; }
         //public DbSet<Order> Order { get; set; }
         //public DbSet<OrderDetails> OrderDetails { get; set; }
         public DbSet<Customer> Customer { get; set; }
@@ -35,6 +38,7 @@ namespace Repo
             //modelbuilder.MapUser();
             //modelbuilder.MapOrder();
             modelbuilder.MapProduct();
+            //modelbuilder.MapCategory();
             //modelbuilder.MapOrderDetails();
         }
         public override int SaveChanges()

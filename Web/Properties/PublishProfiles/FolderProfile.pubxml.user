@@ -5,9 +5,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>ftp://AsianStore.somee.com/www.AsianStore.somee.com</_PublishTargetUrl>
-    <History>True|2022-08-24T13:11:31.9981761Z;True|2022-08-24T14:51:54.3476421+02:00;False|2022-08-24T14:43:50.6498186+02:00;False|2022-08-24T12:48:45.4509374+02:00;True|2022-08-24T12:05:17.6862204+02:00;True|2022-08-24T02:33:31.6371949+02:00;False|2022-08-24T00:26:04.9208328+02:00;False|2022-08-24T00:02:03.9517690+02:00;False|2022-08-23T18:22:11.7551103+02:00;False|2022-08-23T17:36:56.3339591+02:00;False|2022-08-23T17:24:20.8164542+02:00;False|2022-08-23T13:11:04.7351669+02:00;False|2022-08-23T13:10:53.6701915+02:00;False|2022-08-23T13:10:47.2791831+02:00;True|2022-08-22T17:16:21.8148877+02:00;</History>
+    <History>True|2022-08-29T10:01:29.2343863Z;False|2022-08-29T11:43:04.6879345+02:00;False|2022-08-29T11:40:17.5602667+02:00;True|2022-08-29T11:27:36.2102319+02:00;True|2022-08-29T11:26:18.8816838+02:00;True|2022-08-29T11:23:13.1844573+02:00;True|2022-08-24T15:11:31.9981761+02:00;True|2022-08-24T14:51:54.3476421+02:00;False|2022-08-24T14:43:50.6498186+02:00;False|2022-08-24T12:48:45.4509374+02:00;True|2022-08-24T12:05:17.6862204+02:00;True|2022-08-24T02:33:31.6371949+02:00;False|2022-08-24T00:26:04.9208328+02:00;False|2022-08-24T00:02:03.9517690+02:00;False|2022-08-23T18:22:11.7551103+02:00;False|2022-08-23T17:36:56.3339591+02:00;False|2022-08-23T17:24:20.8164542+02:00;False|2022-08-23T13:11:04.7351669+02:00;False|2022-08-23T13:10:53.6701915+02:00;False|2022-08-23T13:10:47.2791831+02:00;True|2022-08-22T17:16:21.8148877+02:00;</History>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsFrWrmMB6k6uWXutQVYVIAAAAAACAAAAAAAQZgAAAAEAACAAAABAXdINDPrah4mnqIr77dkBeiCdNhhLWdG9kwPU234GJgAAAAAOgAAAAAIAACAAAADlOx1Bl8aag8pUBepNePNRiSY/Jtv6ou5ngQWe1MO7tSAAAADzMWQ4F39HUfxcsD4I88FCZeFbQwqwWLOnxeuQVL4gXUAAAADvseIk3AbyTmvMibUGmJXFltLtfdPQjRPxTfMBLEuV9j/mk7bxhdhTPG6DFBdttBBsonazJLQ0U6o6647kCBzk</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsFrWrmMB6k6uWXutQVYVIAAAAAACAAAAAAAQZgAAAAEAACAAAAD1obCKv1gQrCv7e/A3zwKtOpJM/isyaPD3HhhM6FNV3QAAAAAOgAAAAAIAACAAAAAdELBdHchQV6iwZWVjKySCLw2UkiLgPufEeNd0OHDNeSAAAADVA9pYm2bB9SfP97uNl0NUD8/vZ4l1bfGjZSsSXN24bEAAAAAy57+qOX9faVJPZBDITPMDVxbg+T9ZySIX+vFzzAdekWOVQsN7u28ALnY4MRxrbVwLGeA2P8v6WJu4qlx+TD1v</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
@@ -17,7 +17,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/23/2022 16:04:00</publishTime>
     </File>
     <File Include="ar/Web.resources.dll">
-      <publishTime>08/24/2022 15:04:16</publishTime>
+      <publishTime>08/29/2022 11:57:24</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>01/05/2022 17:27:54</publishTime>
@@ -62,10 +62,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/14/2021 20:38:18</publishTime>
     </File>
     <File Include="Data.dll">
-      <publishTime>08/23/2022 17:47:42</publishTime>
+      <publishTime>08/29/2022 11:22:57</publishTime>
     </File>
     <File Include="Data.pdb">
-      <publishTime>08/23/2022 17:47:42</publishTime>
+      <publishTime>08/29/2022 11:22:56</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
       <publishTime>10/14/2021 20:43:18</publishTime>
@@ -107,7 +107,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/08/2022 23:18:10</publishTime>
     </File>
     <File Include="en/Web.resources.dll">
-      <publishTime>08/24/2022 15:04:16</publishTime>
+      <publishTime>08/29/2022 11:57:24</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
       <publishTime>10/14/2021 20:43:18</publishTime>
@@ -362,7 +362,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/14/2021 20:38:36</publishTime>
     </File>
     <File Include="Microsoft.Data.SqlClient.dll">
-      <publishTime>09/21/2021 01:59:32</publishTime>
+      <publishTime>09/21/2021 01:59:34</publishTime>
     </File>
     <File Include="Microsoft.Data.SqlClient.SNI.dll">
       <publishTime>10/20/2020 20:13:38</publishTime>
@@ -437,7 +437,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/08/2022 23:18:08</publishTime>
     </File>
     <File Include="Microsoft.Win32.SystemEvents.dll">
-      <publishTime>10/23/2021 01:40:24</publishTime>
+      <publishTime>10/23/2021 01:40:18</publishTime>
     </File>
     <File Include="Newtonsoft.Json.dll">
       <publishTime>03/17/2021 22:03:36</publishTime>
@@ -542,10 +542,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/14/2021 20:38:18</publishTime>
     </File>
     <File Include="Repo.dll">
-      <publishTime>08/23/2022 17:47:42</publishTime>
+      <publishTime>08/29/2022 11:22:57</publishTime>
     </File>
     <File Include="Repo.pdb">
-      <publishTime>08/23/2022 17:47:42</publishTime>
+      <publishTime>08/29/2022 11:22:56</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
       <publishTime>10/14/2021 20:43:18</publishTime>
@@ -620,10 +620,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/15/2019 10:53:44</publishTime>
     </File>
     <File Include="Services.dll">
-      <publishTime>08/23/2022 17:47:43</publishTime>
+      <publishTime>08/27/2022 00:31:34</publishTime>
     </File>
     <File Include="Services.pdb">
-      <publishTime>08/23/2022 17:47:43</publishTime>
+      <publishTime>08/27/2022 00:31:34</publishTime>
     </File>
     <File Include="System.Composition.AttributedModel.dll">
       <publishTime>11/05/2016 06:55:42</publishTime>
@@ -644,7 +644,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/23/2021 01:51:46</publishTime>
     </File>
     <File Include="System.Drawing.Common.dll">
-      <publishTime>10/23/2021 01:49:12</publishTime>
+      <publishTime>10/23/2021 01:48:10</publishTime>
     </File>
     <File Include="System.IdentityModel.Tokens.Jwt.dll">
       <publishTime>10/13/2020 02:20:12</publishTime>
@@ -653,7 +653,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/26/2022 12:14:48</publishTime>
     </File>
     <File Include="System.Runtime.Caching.dll">
-      <publishTime>11/15/2019 10:37:36</publishTime>
+      <publishTime>11/15/2019 10:53:44</publishTime>
     </File>
     <File Include="System.Security.Cryptography.ProtectedData.dll">
       <publishTime>10/23/2021 01:51:04</publishTime>
@@ -662,7 +662,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/23/2021 01:49:50</publishTime>
     </File>
     <File Include="System.Windows.Extensions.dll">
-      <publishTime>10/23/2021 01:49:44</publishTime>
+      <publishTime>10/23/2021 01:49:58</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
       <publishTime>10/14/2021 20:43:18</publishTime>
@@ -701,22 +701,22 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/14/2021 20:38:18</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>08/24/2022 15:04:23</publishTime>
+      <publishTime>08/29/2022 11:57:27</publishTime>
     </File>
     <File Include="Web.deps.json">
-      <publishTime>08/24/2022 15:04:17</publishTime>
+      <publishTime>08/29/2022 11:57:26</publishTime>
     </File>
     <File Include="Web.dll">
-      <publishTime>08/24/2022 15:04:10</publishTime>
+      <publishTime>08/29/2022 11:57:23</publishTime>
     </File>
     <File Include="Web.exe">
-      <publishTime>08/24/2022 15:04:10</publishTime>
+      <publishTime>08/29/2022 11:57:23</publishTime>
     </File>
     <File Include="Web.pdb">
-      <publishTime>08/24/2022 15:04:10</publishTime>
+      <publishTime>08/29/2022 11:57:23</publishTime>
     </File>
     <File Include="Web.runtimeconfig.json">
-      <publishTime>08/23/2022 17:47:46</publishTime>
+      <publishTime>08/29/2022 11:57:24</publishTime>
     </File>
     <File Include="wwwroot/Admin/assets/css/style.bundle.css">
       <publishTime>07/27/2022 14:05:15</publishTime>
@@ -1299,6 +1299,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="wwwroot/Admin/assets/js/scripts.bundle.js">
       <publishTime>07/27/2022 14:05:15</publishTime>
+    </File>
+    <File Include="wwwroot/Admin/assets/js/Select2ToTree/select2totree.css">
+      <publishTime>07/27/2022 14:06:05</publishTime>
+    </File>
+    <File Include="wwwroot/Admin/assets/js/Select2ToTree/select2totree.js">
+      <publishTime>07/27/2022 14:06:05</publishTime>
     </File>
     <File Include="wwwroot/Admin/assets/js/widgets.bundle.js">
       <publishTime>07/27/2022 14:05:15</publishTime>
@@ -5264,7 +5270,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/24/2021 13:09:26</publishTime>
     </File>
     <File Include="wwwroot/js/ProductDatatable.js">
-      <publishTime>08/18/2022 02:20:24</publishTime>
+      <publishTime>08/25/2022 02:12:40</publishTime>
     </File>
     <File Include="wwwroot/js/site.js">
       <publishTime>07/08/2022 03:22:53</publishTime>
@@ -5441,7 +5447,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/08/2022 03:22:53</publishTime>
     </File>
     <File Include="wwwroot/Web.styles.css">
-      <publishTime>08/23/2022 17:47:46</publishTime>
+      <publishTime>08/23/2022 17:51:57</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
       <publishTime>10/14/2021 20:43:18</publishTime>

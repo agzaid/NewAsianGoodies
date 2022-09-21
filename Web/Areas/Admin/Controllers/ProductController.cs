@@ -6,9 +6,12 @@ using Services.Shop;
 using Web.Models.Shop;
 using System.Linq.Dynamic.Core;
 using System.Linq;
+using Web.Areas.Admin.Models.Shop;
+using System.Text.Json;
 
-namespace Web.Controllers
+namespace Web.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
@@ -23,58 +26,48 @@ namespace Web.Controllers
         public IActionResult Index()
         {
             var products = _productService.GetMany(s => true, null).ToList();
-            var recordsTotal = products.Count();
-            ViewData["records"] = recordsTotal;
+            //var recordsTotal = products.Count();
+            //ViewData["records"] = recordsTotal;
+            var columns = new List<string>()
+            {
+                "Name",
+                "Price",
+                "Image",
+                "Description"
+            };
+           ViewBag.columns = JsonSerializer.Serialize(columns);
+
             return View(products);
         }
-        [HttpPost]
-        public IActionResult GetProducts()
-        {
-            var pageSize = int.Parse(Request.Form["length"]);
-            var skip = int.Parse(Request.Form["start"]);
-            var searchValue = Request.Form["search[value]"];
-            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"] + "][name]"];
-            var sortDir = Request.Form["order[0][dir]"];
-
-            //for searching
-            IEnumerable<Product> products = _productService.GetMany(s => true, null)
-                .Where(m => string.IsNullOrEmpty(searchValue) ? true : (m.Name.Contains(searchValue) || m.Description.Contains(searchValue) || m.Price.ToString().Contains(searchValue)));
-
-            //for sorting
-            //IQueryable<Product> queryProducts = (IQueryable<Product>)products;
-            //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortDir)))
-            //   products = queryProducts.OrderBy(string.Concat(sortColumn, " ", sortDir));
-
-            var data = products.Skip(skip).Take(pageSize).ToList();
-
-            var recordsTotal = products.Count();
-            ViewData["records"] = recordsTotal;
-            return Ok(new { recordsFiltered = recordsTotal, recordsTotal, data = data });
-        }
+        
 
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            var product = new CreateProductViewModel();
+            return View(product);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ProductViewModel model)
+        public IActionResult Create(CreateProductViewModel model)
         {
             if (ModelState.IsValid)
             {
-                model.ImageFiles.ForEach(async i => model.Images.Add($"/Uploads/Products/{await FileExtension.CreateFile(i, "Products")}"));
-                var product = new Product()
-                {
-                    ID = 0,
-                    Description = model.Description,
-                    Name = model.Name,
-                    Price = model.Price,
-                    //Image= model.Images
-                };
-                _productService.Insert(product);
+
+                //   model.ImageFiles.ForEach(async i => model.Images.Add($"/Uploads/Products/{await FileExtension.CreateFile(i, "Products")}"));
+                //var product = new Product()
+                //{
+                //    ID = 0,
+                //    Description = model.Description,
+                //    Name = model.ProductName,
+                //    Price = model.Price,
+                //    //Image= model.Images
+                //};
+                //_productService.Insert(product);
+
             }
-            return RedirectToAction("Index");
+                TempData["alertNotification"] = "success";
+            return RedirectToAction("index"); ;
         }
         public IActionResult Edit(int? id)
         {
@@ -83,7 +76,7 @@ namespace Web.Controllers
                 return NotFound();
             }
             var product = _productService.GetOne(s => s.ID == id, null);
-            var productViewModel = _mapper.Map<ProductViewModel>(product);
+            var productViewModel = _mapper.Map<CreateProductViewModel>(product);
             if (product == null)
             {
                 return NotFound();
@@ -92,14 +85,14 @@ namespace Web.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(ProductViewModel model)
+        public IActionResult Edit(CreateProductViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var oldModel = _productService.GetOne(s => s.ID == model.Id, null);
+                var oldModel = _productService.GetOne(s => s.ID == model.ID, null);
 
-                oldModel.Name = model.Name;
-                oldModel.Description = model.Description;
+                oldModel.ProductName = model.ProductName;
+                oldModel.ShortDescription = model.ShortDescription;
                 oldModel.Price = model.Price;
 
                 _productService.Update(oldModel);
@@ -129,6 +122,36 @@ namespace Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+        #region Helper Methods
+
+        [HttpPost]
+        public IActionResult LoadDataTable()
+        {
+            var pageSize = int.Parse(Request.Form["length"]);
+            var skip = int.Parse(Request.Form["start"]);
+            var searchValue = Request.Form["search[value]"];
+            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"] + "][name]"];
+            var sortDir = Request.Form["order[0][dir]"];
+
+            //for searching
+            IEnumerable<Product> products = _productService.GetMany(s => true, null)
+                .Where(m => string.IsNullOrEmpty(searchValue) ? true : (m.ProductName.Contains(searchValue) || m.ShortDescription.Contains(searchValue) || m.Price.ToString().Contains(searchValue)));
+
+            //for sorting
+            //IQueryable<Product> queryProducts = (IQueryable<Product>)products;
+            //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortDir)))
+            //   products = queryProducts.OrderBy(string.Concat(sortColumn, " ", sortDir));
+
+            var data = products.Skip(skip).Take(pageSize).ToList();
+
+            var recordsTotal = products.Count();
+            ViewData["records"] = recordsTotal;
+            return Ok(new { recordsFiltered = recordsTotal, recordsTotal, data = data });
+        }
+        
+        #endregion
 
 
     }

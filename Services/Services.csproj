@@ -7,7 +7,7 @@
     <!--<Nullable>enable</Nullable>-->
   </PropertyGroup>
 	<ItemGroup>
-		<FrameworkReference Include="Microsoft.AspNetCore.App"/>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
@@ -27,6 +27,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
     <ProjectReference Include="..\Repo\Repo.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mapper\" />
   </ItemGroup>
 
 </Project>

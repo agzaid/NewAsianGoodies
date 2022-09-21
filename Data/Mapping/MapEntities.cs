@@ -19,5 +19,9 @@ namespace Data.Mapping
         {
             modelBuilder.Entity<Product>().HasKey(s => s.ID);
         }
+        public static void MapCategory(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasKey(s => s.ID);
+        }
     }
 }

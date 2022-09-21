@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IuymkWYdJ6DI4c7vZbwYzjJg8C9yNdzizmJTM1EEaQI=",
+  "Hash": "lZnhnan1g/mQyffAzgl9Ln6CzLh/y0hqdWS1cmxSYhU=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Web.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Admin\\assets\\css\\Site.css",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "Admin/assets/css/Site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\assets\\css\\Site.css"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Admin\\assets\\css\\style.bundle.css",
@@ -3347,6 +3364,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Admin\\assets\\js\\scripts.bundle.js"
+    },
+    {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Admin\\assets\\js\\Select2ToTree\\select2totree.css",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "Admin/assets/js/Select2ToTree/select2totree.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\assets\\js\\Select2ToTree\\select2totree.css"
+    },
+    {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Admin\\assets\\js\\Select2ToTree\\select2totree.js",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "Admin/assets/js/Select2ToTree/select2totree.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\assets\\js\\Select2ToTree\\select2totree.js"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Admin\\assets\\js\\widgets.bundle.js",
