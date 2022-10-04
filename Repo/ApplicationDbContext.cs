@@ -26,8 +26,8 @@ namespace Repo
         //}
         #endregion
         public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Category { get; set; }
         //public DbSet<Order> Product { get; set; }
-        //public DbSet<Category> Category { get; set; }
         //public DbSet<Order> Order { get; set; }
         //public DbSet<OrderDetails> OrderDetails { get; set; }
         public DbSet<Customer> Customer { get; set; }

@@ -32,8 +32,12 @@ namespace Web.Areas.Admin.Controllers
             {
                 "Name",
                 "Price",
+                "DisplayOrder",
+                "Quantity",
+                "Status",
+                "ThumbnailImage",
                 "Image",
-                "Description"
+                "ShortDescription"
             };
            ViewBag.columns = JsonSerializer.Serialize(columns);
 

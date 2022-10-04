@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Data">
       <HintPath>..\Data\obj\Debug\net6.0\Data.dll</HintPath>
     </Reference>

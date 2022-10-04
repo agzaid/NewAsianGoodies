@@ -109,11 +109,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Data\\Data.csproj": {
-                "projectPath": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Data\\Data.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

@@ -283,5 +283,3 @@ D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Debug\net6.0\Microsoft.Exten
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Debug\net6.0\libman.json
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
-D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Debug\net6.0\ar\Web.resources.cs
-D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Debug\net6.0\en\Web.resources.cs
