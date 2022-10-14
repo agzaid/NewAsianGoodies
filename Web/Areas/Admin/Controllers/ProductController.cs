@@ -35,15 +35,15 @@ namespace Web.Areas.Admin.Controllers
                 "DisplayOrder",
                 "Quantity",
                 "Status",
-                "ThumbnailImage",
-                "Image",
+                //"ThumbnailImage",
+                //"Image",
                 "ShortDescription"
             };
-           ViewBag.columns = JsonSerializer.Serialize(columns);
+            ViewBag.columns = JsonSerializer.Serialize(columns);
 
             return View(products);
         }
-        
+
 
         [HttpGet]
         public IActionResult Create()
@@ -53,11 +53,23 @@ namespace Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(CreateProductViewModel model)
+        public async Task<IActionResult> CreateAsync(CreateProductViewModel model)
         {
             if (ModelState.IsValid)
             {
-
+                var product = new Product()
+                {
+                    ThumbnailImage = $"/Uploads/Products/{await model.ThumbnailFormFile.CreateFile("Products")}",
+                    CreatedDate = DateTime.UtcNow,
+                    DisplayOrder = model.DisplayOrder,
+                    ModifiedDate = DateTime.UtcNow,
+                    Price = model.Price,
+                    ProductName = model.ProductName,
+                    Quantity = model.Quantity,
+                    ShortDescription = model.ShortDescription,
+                    Status = model.Status,
+                };
+                _productService.Insert(product);
                 //   model.ImageFiles.ForEach(async i => model.Images.Add($"/Uploads/Products/{await FileExtension.CreateFile(i, "Products")}"));
                 //var product = new Product()
                 //{
@@ -68,9 +80,8 @@ namespace Web.Areas.Admin.Controllers
                 //    //Image= model.Images
                 //};
                 //_productService.Insert(product);
-
-            }
                 TempData["alertNotification"] = "success";
+            }
             return RedirectToAction("index"); ;
         }
         public IActionResult Edit(int? id)
@@ -154,7 +165,7 @@ namespace Web.Areas.Admin.Controllers
             ViewData["records"] = recordsTotal;
             return Ok(new { recordsFiltered = recordsTotal, recordsTotal, data = data });
         }
-        
+
         #endregion
 
 

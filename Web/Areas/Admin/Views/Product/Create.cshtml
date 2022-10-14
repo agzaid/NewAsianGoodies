@@ -210,7 +210,10 @@
                                     <label asp-for="ShortDescription" class="form-label"></label>
                                     <!--end::Label-->
                                     <!--begin::Editor-->
-                                    <input type="hidden" asp-for="ShortDescription">
+                                    <input type="text" asp-for="ShortDescription" class="form-control mb-2" placeholder="Short Description" />
+                                    <!--end::Input-->
+                                    <!--begin::Description-->
+                                    <span asp-validation-for="ShortDescription" class="text-danger"></span>
 
                                     <div id="lang-ShortDescription">
                                         @Html.Raw(Model.ShortDescription)
