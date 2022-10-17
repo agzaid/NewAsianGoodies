@@ -84,6 +84,7 @@ namespace Web.Areas.Admin.Controllers
             }
             return RedirectToAction("index"); ;
         }
+        [HttpGet]
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
