@@ -40,6 +40,7 @@ namespace Web.Areas.Admin.Controllers
                 "ShortDescription"
             };
             ViewBag.columns = JsonSerializer.Serialize(columns);
+            ViewBag.stringColumns = columns;
 
             return View(products);
         }
@@ -53,7 +54,7 @@ namespace Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateAsync(CreateProductViewModel model)
+        public async Task<IActionResult> Create(CreateProductViewModel model)
         {
             if (ModelState.IsValid)
             {
