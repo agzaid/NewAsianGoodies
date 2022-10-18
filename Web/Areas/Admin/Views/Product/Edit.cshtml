@@ -37,12 +37,12 @@
                 <span class="bullet bg-gray-300 w-5px h-2px"></span>
             </li>
             <li class="breadcrumb-item text-muted">
-                AddProduct
+                EditProduct
             </li>
         </ul>
     </div>
 }
-    <form id="productForm" method="post" asp-action="create" asp-controller="Product" enctype="multipart/form-data" class="form d-flex flex-column flex-lg-row" data-kt-redirect="products.html">
+    <form id="productForm" method="post" asp-action="Edit" asp-controller="Product" enctype="multipart/form-data" class="form d-flex flex-column flex-lg-row" data-kt-redirect="products.html">
         <!--begin::Aside column-->
         <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10">
             <!--begin::Thumbnail settings-->
@@ -59,7 +59,7 @@
                 <!--begin::Card body-->
                 <div class="card-body text-center pt-0">
                     <!--begin::Image input-->
-                    <div class="image-input image-input-empty image-input-outline mb-3" data-kt-image-input="true" style="background-image: url(../../../assets/media/svg/files/blank-image.svg)">
+                    <div class="image-input image-input-empty image-input-outline mb-3" data-kt-image-input="true" style="background-image: url(@Model.ThumbnailImage)">
                         <!--begin::Preview existing avatar-->
                         <div class="image-input-wrapper w-150px h-150px"></div>
                         <!--end::Preview existing avatar-->
@@ -129,7 +129,7 @@
                 <div class="card-header">
                     <!--begin::Card title-->
                     <div class="card-title">
-                        <h2>Product Details</h2>
+                        <h2>Category</h2>
                     </div>
                     <!--end::Card title-->
                 </div>
@@ -138,7 +138,7 @@
                 <div class="card-body pt-0">
                     <!--begin::Input group-->
                     <!--begin::Label-->
-                    <label class="form-label">Categories</label>
+                    <label class="form-label">Product Category</label>
                     <!--end::Label-->
                     <!--begin::Select2-->
                     <select asp-for="CategoryId" class="form-select mb-2" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
@@ -156,7 +156,7 @@
                     </select>
                     <!--end::Select2-->
                     <!--begin::Description-->
-                    <div class="text-muted fs-7 mb-7">Add product to a category.</div>
+                    <div class="text-muted fs-7 mb-7">Add category for product.</div>
                     <!--end::Description-->
                 </div>
                 <!--end::Card body-->
@@ -215,9 +215,9 @@
                                     <!--begin::Description-->
                                     <span asp-validation-for="ShortDescription" class="text-danger"></span>
 
-                                    <div id="lang-ShortDescription">
+                                    @*<div id="lang-ShortDescription">
                                         @Html.Raw(Model.ShortDescription)
-                                    </div>
+                                    </div>*@
                                     <!--end::Editor-->
 
                                 </div>
@@ -285,7 +285,7 @@
                                     <label class="required form-label">Base Price</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input asp-for="Price" class="form-control mb-2" placeholder="Product price" value=""/>
+                                    <input asp-for="Price" class="form-control mb-2" placeholder="Product price" />
                                     <!--end::Input-->
                                     <!--begin::Description-->
                                     <span asp-validation-for="Price" class="text-danger"></span>
@@ -314,7 +314,7 @@
                                     <label class="required form-label" asp-for="Quantity"></label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input asp-for="Quantity" class="form-control mb-2" placeholder="Product price" value=""/>
+                                    <input asp-for="Quantity" class="form-control mb-2" placeholder="Product price"/>
                                     <!--end::Input-->
                                     <!--begin::Description-->
                                     <span asp-validation-for="Quantity" class="text-danger"></span>

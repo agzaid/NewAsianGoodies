@@ -94,6 +94,17 @@ namespace Web.Areas.Admin.Controllers
             }
             var product = _productService.GetOne(s => s.ID == id, null);
             var productViewModel = _mapper.Map<CreateProductViewModel>(product);
+            //var productViewModel = new CreateProductViewModel()
+            //{
+            //    ID = product.ID,
+            //    ProductName = product.ProductName,
+            //    ShortDescription = product.ShortDescription,
+            //    Image = product.Image,
+            //    Price = product.Price,
+            //    DisplayOrder = product.DisplayOrder,
+            //    Status = product.Status,
+            //    ThumbnailImage= product.ThumbnailImage,
+            //};
             if (product == null)
             {
                 return NotFound();

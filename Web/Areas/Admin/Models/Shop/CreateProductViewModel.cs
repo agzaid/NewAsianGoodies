@@ -16,29 +16,32 @@ namespace Web.Areas.Admin.Models.Shop
                 }).ToList();
             ListOfStatus.Insert(0, new SelectListItem
             {
-                Value= String.Empty,
-                Text="--------------"
+                Value = String.Empty,
+                Text = "--------------"
             });
         }
         public int ID { get; set; }
-        public string CategoryId { get; set; }
+        [Display(Name = "Product Name")]
+        public string ProductName { get; set; }
+        public double Price { get; set; }
         public int DisplayOrder { get; set; }
         public int Quantity { get; set; }
+        public string CategoryId { get; set; }
         public RecordStatus Status { get; set; }
-        public double Price { get; set; }
-        public IFormFile ThumbnailFormFile { get; set; }
+        public string Image { get; set; }
         public string ThumbnailImage { get; set; }
+        [Display(Name = "Short Description")]
+        public string ShortDescription { get; set; }
+
+        public IFormFile ThumbnailFormFile { get; set; }
         public List<IFormFile> GalleryFormFiles { get; set; } = new();
         public List<string> RawGalleyImages { get; set; } = new();
         public List<string> GalleyImages { get; set; } = new();
         public List<string> OldGalleyImages { get; set; } = new();
         public List<string> NewGalleyImages { get; set; } = new();
         public List<string> DeleteGalleyImages { get; set; } = new();
-        [Display(Name ="Product Name")]
-        public string ProductName { get; set; }
-        [Display(Name = "Short Description")]
-        public string ShortDescription { get; set; }
-        public List<SelectListItem> ListOfStatus { get; set; } = new ();
+
+        public List<SelectListItem> ListOfStatus { get; set; } = new();
 
     }
 }
