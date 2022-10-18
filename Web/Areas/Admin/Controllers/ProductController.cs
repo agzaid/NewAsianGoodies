@@ -54,7 +54,7 @@ namespace Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CreateProductViewModel model)
+        public async Task<IActionResult> CreateAsync(CreateProductViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -94,17 +94,7 @@ namespace Web.Areas.Admin.Controllers
             }
             var product = _productService.GetOne(s => s.ID == id, null);
             var productViewModel = _mapper.Map<CreateProductViewModel>(product);
-            //var productViewModel = new CreateProductViewModel()
-            //{
-            //    ID = product.ID,
-            //    ProductName = product.ProductName,
-            //    ShortDescription = product.ShortDescription,
-            //    Image = product.Image,
-            //    Price = product.Price,
-            //    DisplayOrder = product.DisplayOrder,
-            //    Status = product.Status,
-            //    ThumbnailImage= product.ThumbnailImage,
-            //};
+            
             if (product == null)
             {
                 return NotFound();
@@ -113,15 +103,24 @@ namespace Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(CreateProductViewModel model)
+        public async Task<IActionResult> EditAsync(CreateProductViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var oldModel = _productService.GetOne(s => s.ID == model.ID, null);
 
+                if (model.ThumbnailFormFile is not null)
+                {
+                    FileExtension.DeleteFile(oldModel.ThumbnailImage);
+                    oldModel.ThumbnailImage = $"/Uploads/Products/{await model.ThumbnailFormFile.CreateFile("Products")}";
+                }
+
                 oldModel.ProductName = model.ProductName;
                 oldModel.ShortDescription = model.ShortDescription;
                 oldModel.Price = model.Price;
+                oldModel.Status = model.Status;
+                oldModel.Quantity = model.Quantity;
+                oldModel.DisplayOrder = model.DisplayOrder;
 
                 _productService.Update(oldModel);
                 return RedirectToAction("Index");

@@ -35,7 +35,7 @@ namespace Services.Injection
                 return string.Empty;
             }
         }
-        public static void DeleteFile(string filePath)
+        public static void DeleteFolder(string filePath)
         {
             try
             {
@@ -46,6 +46,27 @@ namespace Services.Injection
                 else
                 {
                     throw new ArgumentException("Directory not exists", nameof(filePath));
+                }
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message, nameof(filePath));
+            }
+
+        }
+        public static void DeleteFile(string filePath)
+        {
+            try
+            {
+                filePath = filePath.Replace('/', '\\');
+                filePath = $"{Directory.GetCurrentDirectory()}\\wwwroot{filePath}";
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+                else
+                {
+                    throw new ArgumentException("File doesn't exists", nameof(filePath));
                 }
             }
             catch (Exception e)
