@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1D4LLu6t0MgZMVbJDamqYhcA3rET74jehfrG4EyfqB0=",
+  "Hash": "4lNUgg5Imu9HDLFU7EMG21beOkAZoww/Cd7Vzff6508=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -13141,23 +13141,6 @@
       "OriginalItemSpec": "wwwroot\\images\\arrival-bg.jpg"
     },
     {
-      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\images\\arrival-bg.png",
-      "SourceId": "Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
-      "BasePath": "_content/Web",
-      "RelativePath": "images/arrival-bg.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\arrival-bg.png"
-    },
-    {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\images\\client.jpg",
       "SourceId": "Web",
       "SourceType": "Discovered",
@@ -13411,6 +13394,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\p9.png"
+    },
+    {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\images\\person-photo-placeholder.png",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/person-photo-placeholder.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\person-photo-placeholder.png"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\images\\slider-bg.jpg",
@@ -14501,12 +14501,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\52d17e0e-7d10-4b81-bc15-bab3c09875c7.jpeg",
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\0f4d7482-e9f7-4da9-b731-ce086c9160f6.jpg",
       "SourceId": "Web",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
       "BasePath": "_content/Web",
-      "RelativePath": "Uploads/Products/52d17e0e-7d10-4b81-bc15-bab3c09875c7.jpeg",
+      "RelativePath": "Uploads/Products/0f4d7482-e9f7-4da9-b731-ce086c9160f6.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -14515,7 +14515,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\52d17e0e-7d10-4b81-bc15-bab3c09875c7.jpeg"
+      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\0f4d7482-e9f7-4da9-b731-ce086c9160f6.jpg"
+    },
+    {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\5c864890-6f83-41e7-84c6-8e0bf49883c7.jpeg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "Uploads/Products/5c864890-6f83-41e7-84c6-8e0bf49883c7.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\5c864890-6f83-41e7-84c6-8e0bf49883c7.jpeg"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\b1da7440-4f09-41ff-ac0f-83b681195167.jpeg",

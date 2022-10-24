@@ -4,8 +4,8 @@ D:\Programming\Projects\MVC\NewAsianGoodies\Services\bin\Debug\net6.0\Services.d
 D:\Programming\Projects\MVC\NewAsianGoodies\Services\bin\Debug\net6.0\Services.pdb
 D:\Programming\Projects\MVC\NewAsianGoodies\Services\bin\Debug\net6.0\Data.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Services\bin\Debug\net6.0\Repo.dll
-D:\Programming\Projects\MVC\NewAsianGoodies\Services\bin\Debug\net6.0\Repo.pdb
 D:\Programming\Projects\MVC\NewAsianGoodies\Services\bin\Debug\net6.0\Data.pdb
+D:\Programming\Projects\MVC\NewAsianGoodies\Services\bin\Debug\net6.0\Repo.pdb
 D:\Programming\Projects\MVC\NewAsianGoodies\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
 D:\Programming\Projects\MVC\NewAsianGoodies\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
 D:\Programming\Projects\MVC\NewAsianGoodies\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
