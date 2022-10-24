@@ -8,6 +8,7 @@ $(document).ready(function () {
     var urlEdit = $("#" + AGelemID).attr("data-AG-edit");
     var urlDelete = $("#" + AGelemID).attr("data-AG-delete");
     var AGelemColumns = $("#" + AGelemID).attr("data-AG-columns");
+    var AGelemMessage = $("#" + AGelemID).attr("data-AG-message");
     var c = JSON.parse(AGelemColumns);
     var columnsRedered = [{ "data": "id", "name": "ID", "autowidth": true }];
 
@@ -18,7 +19,7 @@ $(document).ready(function () {
         "orderable": false
     });
 
-   
+    myToastr(AGelemMessage);
 
     $("#" + AGelemID).dataTable({
         "serverSide": true,
@@ -55,6 +56,22 @@ $(document).ready(function () {
 
         var o = { "data": c[0].toLowerCase() + c.slice(1), "name": c, "autowidth": true };
         columnsRedered.push(o);
+    }
+    function myToastr(message) {
+        switch (message) {
+            case "Success":
+                toastr.success('Created Successfully');
+                break;
+            case "Error":
+                toastr.error('Failed');
+                break;
+            case "":
+                toastr.warning('Empty');
+                break;
+
+            default:
+                toastr.info('Are you the 6 fingered man?')
+        }
     }
 
 });

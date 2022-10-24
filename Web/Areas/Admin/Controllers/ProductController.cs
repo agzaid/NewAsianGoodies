@@ -23,8 +23,12 @@ namespace Web.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(List<string> message)
         {
+            if (message.Count > 0)
+            {
+                ViewBag.Message = message[0];
+            }
             var products = _productService.GetMany(s => true, null).ToList();
             //var recordsTotal = products.Count();
             //ViewData["records"] = recordsTotal;
@@ -56,6 +60,7 @@ namespace Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateAsync(CreateProductViewModel model)
         {
+            var Message = new List<string>();
             if (ModelState.IsValid)
             {
                 var product = new Product()
@@ -71,19 +76,9 @@ namespace Web.Areas.Admin.Controllers
                     Status = model.Status,
                 };
                 _productService.Insert(product);
-                //   model.ImageFiles.ForEach(async i => model.Images.Add($"/Uploads/Products/{await FileExtension.CreateFile(i, "Products")}"));
-                //var product = new Product()
-                //{
-                //    ID = 0,
-                //    Description = model.Description,
-                //    Name = model.ProductName,
-                //    Price = model.Price,
-                //    //Image= model.Images
-                //};
-                //_productService.Insert(product);
-                TempData["alertNotification"] = "success";
+                Message.Add("Success");
             }
-            return RedirectToAction("index"); ;
+            return RedirectToAction("index", new { message = Message }); ;
         }
         [HttpGet]
         public IActionResult Edit(int? id)
@@ -94,7 +89,7 @@ namespace Web.Areas.Admin.Controllers
             }
             var product = _productService.GetOne(s => s.ID == id, null);
             var productViewModel = _mapper.Map<CreateProductViewModel>(product);
-            
+
             if (product == null)
             {
                 return NotFound();
@@ -105,6 +100,7 @@ namespace Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditAsync(CreateProductViewModel model)
         {
+            var Message = new List<string>();
             if (ModelState.IsValid)
             {
                 var oldModel = _productService.GetOne(s => s.ID == model.ID, null);
@@ -123,31 +119,27 @@ namespace Web.Areas.Admin.Controllers
                 oldModel.DisplayOrder = model.DisplayOrder;
 
                 _productService.Update(oldModel);
-                return RedirectToAction("Index");
+
+                Message.Add("Create Success");
+                return RedirectToAction("Index", new { message = Message });
             }
             return View(model);
         }
         [HttpGet]
-        public IActionResult Delete(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            var category = _productService.GetOne(s => s.ID == id, null);
-            if (category == null)
-            {
-                return NotFound();
-            }
-            return View(category);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
+            var Message = new List<string>();
+            var product = _productService.GetOne(s => s.ID == id, null);
+            var result = FileExtension.DeleteFile(product.ThumbnailImage);
+
+            if (!result.Succeeded)
+            {
+                Message.AddRange(result.Errors);
+                return RedirectToAction("Index", new { message = Message });
+            }
             _productService.Delete(id);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { message = Message });
         }
 
 

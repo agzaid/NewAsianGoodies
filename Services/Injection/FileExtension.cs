@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Services.Injection.CommonResult;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace Services.Injection
             }
 
         }
-        public static void DeleteFile(string filePath)
+        public static Result<bool> DeleteFile(string filePath)
         {
             try
             {
@@ -63,15 +64,32 @@ namespace Services.Injection
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
+                    return new Result<bool>
+                    {
+                        Succeeded = true,
+                        MessageType= ValidationMessageTypes.Success,
+                    };
                 }
                 else
                 {
-                    throw new ArgumentException("File doesn't exists", nameof(filePath));
+
+                    //throw new ArgumentException("File doesn't exists", nameof(filePath));
+                    return new Result<bool>
+                    {
+                        Succeeded = false,
+                        MessageType = ValidationMessageTypes.Exception,
+                        Errors = new List<string>() { String.Format("File doesn't exists", nameof(filePath)) }
+                    };
                 }
             }
             catch (Exception e)
             {
-                throw new ArgumentException(e.Message, nameof(filePath));
+                return new Result<bool>
+                {
+                    Succeeded = false,
+                    MessageType = ValidationMessageTypes.Exception,
+                    Errors = new List<string>() { String.Format("File doesn't exists", nameof(filePath)) }
+                };
             }
 
         }
