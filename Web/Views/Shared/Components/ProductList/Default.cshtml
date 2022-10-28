@@ -10,13 +10,13 @@
                     <a href="" class="option1">
                         Add To Cart
                     </a>
-                    <a href="" class="option2">
-                        Buy Now
+                    <a asp-action="Details" asp-controller="Product" class="option2">
+                        Details
                     </a>
                 </div>
             </div>
             <div class="img-box">
-                <img src="@item.ThumbnailImage" alt="">
+                <img src="@item.ThumbnailImage" alt="@item.ProductName">
             </div>
             <div class="detail-box">
                 <h5>
