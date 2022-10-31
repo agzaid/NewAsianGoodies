@@ -67,6 +67,9 @@ namespace Repo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<int?>("CategoryID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -98,6 +101,8 @@ namespace Repo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("CategoryID");
 
                     b.ToTable("Product");
                 });
@@ -350,6 +355,15 @@ namespace Repo.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Data.Entities.Shop.Product", b =>
+                {
+                    b.HasOne("Data.Entities.Shop.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryID");
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("Data.Entities.User.Customer", b =>
                 {
                     b.HasOne("Data.Entities.User.AppUser", "AppUser")
@@ -408,6 +422,11 @@ namespace Repo.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Data.Entities.Shop.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Data.Entities.User.AppUser", b =>

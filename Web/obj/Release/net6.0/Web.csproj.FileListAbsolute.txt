@@ -19,7 +19,6 @@ D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.Asp
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.Build.Locator.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.CodeAnalysis.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -283,3 +282,7 @@ D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Release\net6.0\refint\Web.dl
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Release\net6.0\Web.pdb
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Release\net6.0\Web.genruntimeconfig.cache
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Release\net6.0\ref\Web.dll
+D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\appsettings.Production.json
+D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.Build.dll
+D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.Build.Framework.dll
+D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Release\net6.0\Microsoft.NET.StringTools.dll

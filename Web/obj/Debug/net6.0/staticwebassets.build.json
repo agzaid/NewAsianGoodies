@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lNgVUQfspI+Ciaxj5APcgnPaaJIP5bRU75xdc8RsMdo=",
+  "Hash": "0ufJpe1V8QDbjar87UcoCU74uXQJ9JSXddkFXIR2KBM=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -12340,6 +12340,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.css"
+    },
+    {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\css\\detailsCard.css",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "css/detailsCard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\detailsCard.css"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\css\\font-awesome.min.css",

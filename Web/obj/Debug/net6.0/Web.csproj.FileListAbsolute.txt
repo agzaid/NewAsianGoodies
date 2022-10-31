@@ -285,3 +285,4 @@ D:\Programming\Projects\MVC\NewAsianGoodies\Web\obj\Debug\net6.0\ref\Web.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Debug\net6.0\Microsoft.Build.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
+D:\Programming\Projects\MVC\NewAsianGoodies\Web\bin\Debug\net6.0\appsettings.Production.json
