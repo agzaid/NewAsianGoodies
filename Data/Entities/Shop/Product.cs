@@ -22,6 +22,7 @@ namespace Data.Entities.Shop
         public string ShortDescription { get; set; }
 
         #region Navigation Properties
+        public Category Category { get; set; }
         //public OrderDetails OrderDetails { get; set; }
         //public int? OrderDetailsId { get; set; }
         #endregion

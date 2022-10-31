@@ -17,6 +17,11 @@ namespace Data.Entities.Shop
         [Display(Name="Display Order")]
         public int DisplayOrder { get; set; }
         public RecordStatus Status { get; set; }
-       // public IEnumerable<Localization> Localizations { get; set; }
+
+        #region navigation properties
+        public List<Product> Products { get; set; }
+        // public IEnumerable<Localization> Localizations { get; set; }
+
+        #endregion
     }
 }

@@ -34,7 +34,7 @@ namespace Repo.Repository
             SaveChanges();
         }
 
-        public T Get(Expression<Func<T, bool>> expression, List<string> references)
+        public async Task<T> Get(Expression<Func<T, bool>> expression, List<string> references)
         {
             if (references != null && references.Any())
             {
@@ -46,10 +46,10 @@ namespace Repo.Repository
                         query = query.Include(item);
                     }
 
-                return query.FirstOrDefault(expression);
+                return await query.FirstOrDefaultAsync(expression);
             }
             else
-                return entities.FirstOrDefault(expression);
+                return await entities.FirstOrDefaultAsync(expression);
         }
 
         public T Get(long id)

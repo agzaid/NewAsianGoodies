@@ -17,9 +17,9 @@ namespace Services.Shop
         {
             this.repository = repository;
         }
-        public void Delete(int id)
+        public async void Delete(int id)
         {
-            Product model = GetOne(s => s.ID == id, null);
+            Product model = await GetOne(s => s.ID == id, null);
 
             repository.Delete(model);
             repository.SaveChanges();
@@ -30,9 +30,9 @@ namespace Services.Shop
             return await repository.GetAll(expression, references);
         }
 
-        public Product GetOne(Expression<Func<Product, bool>> expression, List<string> references)
+        public async Task<Product> GetOne(Expression<Func<Product, bool>> expression, List<string> references)
         {
-            return repository.Get(expression, references);
+            return await repository.Get(expression, references);
         }
 
         public void Insert(Product product)

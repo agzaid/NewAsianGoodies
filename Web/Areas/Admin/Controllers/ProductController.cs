@@ -29,7 +29,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 ViewBag.Message = message[0];
             }
-            var products = _productService.GetMany(s => true, null).Result.ToList();
+            var products = _productService.GetMany(s => true, new List<string>() { "Category" }).Result.ToList();
             //var recordsTotal = products.Count();
             //ViewData["records"] = recordsTotal;
             var columns = new List<string>()
@@ -81,13 +81,13 @@ namespace Web.Areas.Admin.Controllers
             return RedirectToAction("index", new { message = Message }); ;
         }
         [HttpGet]
-        public IActionResult Edit(int? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
-            var product = _productService.GetOne(s => s.ID == id, null);
+            var product = await _productService.GetOne(s => s.ID == id, null);
             var productViewModel = _mapper.Map<CreateProductViewModel>(product);
 
             if (product == null)
@@ -103,7 +103,7 @@ namespace Web.Areas.Admin.Controllers
             var Message = new List<string>();
             if (ModelState.IsValid)
             {
-                var oldModel = _productService.GetOne(s => s.ID == model.ID, null);
+                var oldModel = await _productService.GetOne(s => s.ID == model.ID, null);
 
                 if (model.ThumbnailFormFile is not null)
                 {
@@ -126,10 +126,10 @@ namespace Web.Areas.Admin.Controllers
             return View(model);
         }
         [HttpGet]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var Message = new List<string>();
-            var product = _productService.GetOne(s => s.ID == id, null);
+            var product = await _productService.GetOne(s => s.ID == id, null);
             var result = FileExtension.DeleteFile(product.ThumbnailImage);
 
             if (!result.Succeeded)
