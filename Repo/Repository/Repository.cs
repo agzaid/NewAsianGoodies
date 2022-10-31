@@ -57,11 +57,11 @@ namespace Repo.Repository
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> expression, List<string> references)
+        public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> expression, List<string> references)
         {
             if (references != null && references.Any())
             {
-                IQueryable<T> query = entities.Include(references.FirstOrDefault());
+                var query = entities.Include(references.FirstOrDefault());
 
                 if (references.Count > 1)
                     foreach (var item in references.Skip(1))
@@ -69,10 +69,10 @@ namespace Repo.Repository
                         query = query.Include(item);
                     }
 
-                return query.Where(expression).AsEnumerable();
+                return await query.Where(expression).ToListAsync();
             }
             else
-                return entities.Where(expression).AsEnumerable();
+                return await entities.Where(expression).ToListAsync();
         }
 
         public IEnumerable<T> GetAllPaginated(Expression<Func<T, bool>> expression, int page, int pageSize, List<string> references, bool ascending = true)

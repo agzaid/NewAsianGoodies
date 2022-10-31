@@ -11,9 +11,9 @@ namespace Web.Controllers
         {
             _productService = productService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var products = _productService.GetMany(s => true, null).ToList();
+            var products =  await _productService.GetMany(s => true, null);
             return View(products);
         }
         [HttpGet]

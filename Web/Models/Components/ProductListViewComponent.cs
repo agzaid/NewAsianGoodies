@@ -13,8 +13,8 @@ namespace Web.Models.Components
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var model = _productService.GetMany(s => true, null).ToList();
-            return View(model);
+            var model = await _productService.GetMany(s => true, null);
+            return View(model.ToList());
         }
     }
 }

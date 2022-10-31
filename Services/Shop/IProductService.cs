@@ -10,7 +10,7 @@ namespace Services.Shop
 {
     public interface IProductService
     {
-        IEnumerable<Product> GetMany(Expression<Func<Product, bool>> expression, List<string> references);
+        Task<IEnumerable<Product>> GetMany(Expression<Func<Product, bool>> expression, List<string> references);
         Product GetOne(Expression<Func<Product, bool>> expression, List<string> references);
         void Insert(Product product);
         void Update(Product product);

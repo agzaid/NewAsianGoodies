@@ -29,7 +29,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 ViewBag.Message = message[0];
             }
-            var products = _productService.GetMany(s => true, null).ToList();
+            var products = _productService.GetMany(s => true, null).Result.ToList();
             //var recordsTotal = products.Count();
             //ViewData["records"] = recordsTotal;
             var columns = new List<string>()
@@ -155,7 +155,7 @@ namespace Web.Areas.Admin.Controllers
             var sortDir = Request.Form["order[0][dir]"];
 
             //for searching
-            IEnumerable<Product> products = _productService.GetMany(s => true, null)
+            IEnumerable<Product> products = _productService.GetMany(s => true, null).Result
                 .Where(m => string.IsNullOrEmpty(searchValue) ? true : (m.ProductName.Contains(searchValue) || m.ShortDescription.Contains(searchValue) || m.Price.ToString().Contains(searchValue)));
 
             //for sorting
