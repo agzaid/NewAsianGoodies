@@ -3,11 +3,11 @@ using Data.Entities.Shop;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.Areas.Admin.Models.Shop
+namespace Web.Areas.Admin.Models.Shop.product
 {
-    public class CreateProductViewModel
+    public class IndexProductViewModel
     {
-        public CreateProductViewModel()
+        public IndexProductViewModel()
         {
             ListOfStatus = Enum.GetNames(typeof(RecordStatus))
                 .Select(v => new SelectListItem
@@ -23,7 +23,7 @@ namespace Web.Areas.Admin.Models.Shop
         }
         public int ID { get; set; }
         [Display(Name = "Product Name")]
-        public string ProductName { get; set; }
+        public string Name { get; set; }
         public double Price { get; set; }
         public int DisplayOrder { get; set; }
         public int Quantity { get; set; }

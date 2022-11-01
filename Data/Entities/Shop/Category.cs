@@ -10,9 +10,9 @@ namespace Data.Entities.Shop
 {
     public class Category : BaseEntity
     {
-        public string ParentId { get; set; }
+        //public string ParentId { get; set; }
         public string Name { get; set; }
-        public string ImageSrc { get; set; }
+        public string ThumbnailImage { get; set; }
         public bool Published { get; set; }
         [Display(Name="Display Order")]
         public int DisplayOrder { get; set; }

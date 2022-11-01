@@ -57,7 +57,7 @@ namespace Repo.Repository
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> expression, List<string> references)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> expression, List<string> references)
         {
             if (references != null && references.Any())
             {
@@ -69,10 +69,10 @@ namespace Repo.Repository
                         query = query.Include(item);
                     }
 
-                return await query.Where(expression).ToListAsync();
+                return query.Where(expression).ToList();
             }
             else
-                return await entities.Where(expression).ToListAsync();
+                return entities.Where(expression).ToList();
         }
 
         public IEnumerable<T> GetAllPaginated(Expression<Func<T, bool>> expression, int page, int pageSize, List<string> references, bool ascending = true)
@@ -94,6 +94,15 @@ namespace Repo.Repository
             entities.Add(entity);
             SaveChanges();
         }
+        public async Task InsertAsync(T entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            await entities.AddAsync(entity);
+            await SaveChangesAsync();
+        }
         public void Update(T entity)
         {
             if (entity == null)
@@ -103,13 +112,30 @@ namespace Repo.Repository
             entities.Update(entity);
             SaveChanges();
         }
+
+        public async Task UpdateAsync(T entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            entities.Update(entity);
+            await SaveChangesAsync();
+        }
         public void SaveChanges()
         {
             context.SaveChanges();
         }
+        public async Task SaveChangesAsync()
+        {
+            await context.SaveChangesAsync();
+        }
 
 
-
-
+        public Task DeleteAsync(T entity)
+        {
+            entities.Remove(entity);
+            return SaveChangesAsync();
+        }
     }
 }

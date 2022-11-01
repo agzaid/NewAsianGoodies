@@ -8,6 +8,7 @@ using System.Linq.Dynamic.Core;
 using System.Linq;
 using Web.Areas.Admin.Models.Shop;
 using System.Text.Json;
+using Web.Areas.Admin.Models.Shop.product;
 
 namespace Web.Areas.Admin.Controllers
 {
@@ -29,9 +30,10 @@ namespace Web.Areas.Admin.Controllers
             {
                 ViewBag.Message = message[0];
             }
-            var products = _productService.GetMany(s => true, new List<string>() { "Category" }).Result.ToList();
-            //var recordsTotal = products.Count();
-            //ViewData["records"] = recordsTotal;
+            var products = _productService.GetMany(s => true, new List<string>() { "Category" });
+
+            
+
             var columns = new List<string>()
             {
                 "Name",
@@ -155,17 +157,27 @@ namespace Web.Areas.Admin.Controllers
             var sortDir = Request.Form["order[0][dir]"];
 
             //for searching
-            IEnumerable<Product> products = _productService.GetMany(s => true, null).Result
+            IEnumerable<Product> products = _productService.GetMany(s => true, null)
                 .Where(m => string.IsNullOrEmpty(searchValue) ? true : (m.ProductName.Contains(searchValue) || m.ShortDescription.Contains(searchValue) || m.Price.ToString().Contains(searchValue)));
 
+            var model = products.Select(s => new IndexProductViewModel()
+            {
+                ID = s.ID,
+                Name = s.ProductName,
+                DisplayOrder = s.DisplayOrder,
+                Quantity = s.Quantity,
+                Status = s.Status,
+                ThumbnailImage = s.ThumbnailImage,
+                ShortDescription = s.ShortDescription,
+            });
             //for sorting
             //IQueryable<Product> queryProducts = (IQueryable<Product>)products;
             //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortDir)))
             //   products = queryProducts.OrderBy(string.Concat(sortColumn, " ", sortDir));
 
-            var data = products.Skip(skip).Take(pageSize).ToList();
+            var data = model.Skip(skip).Take(pageSize).ToList();
 
-            var recordsTotal = products.Count();
+            var recordsTotal = model.Count();
             ViewData["records"] = recordsTotal;
             return Ok(new { recordsFiltered = recordsTotal, recordsTotal, data = data });
         }

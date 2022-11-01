@@ -25,9 +25,9 @@ namespace Services.Shop
             repository.SaveChanges();
         }
 
-        public async Task<IEnumerable<Product>> GetMany(Expression<Func<Product, bool>> expression, List<string> references)
+        public IEnumerable<Product> GetMany(Expression<Func<Product, bool>> expression, List<string> references)
         {
-            return await repository.GetAll(expression, references);
+            return repository.GetAll(expression, references);
         }
 
         public async Task<Product> GetOne(Expression<Func<Product, bool>> expression, List<string> references)

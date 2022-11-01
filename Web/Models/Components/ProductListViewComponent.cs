@@ -11,10 +11,10 @@ namespace Web.Models.Components
         {
             _productService = productService;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
+        public IViewComponentResult Invoke()
         {
-            var model = await _productService.GetMany(s => true, null);
-            return View(model.ToList());
+            var model = _productService.GetMany(s => true, null);
+            return View(model);
         }
     }
 }
