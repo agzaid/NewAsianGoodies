@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Repo.Repository;
 using Services.Shop;
+using Services.Shop.CategoryRepo;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -18,7 +19,7 @@ namespace Services.Injection
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IProductService, ProductService>();
-            //services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
             return services;
         }
