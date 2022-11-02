@@ -17,10 +17,14 @@
     <link href="~/css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="~/css/responsive.css" rel="stylesheet" />
-     @RenderSection("Styles", required: false)
+    @RenderSection("Styles", required: false)
 </head>
 
 <body>
+    @if (true)
+    {
+        <div class="text-center" style="background-color:black"><a style="color:#fff;" asp-controller="manage" asp-area="admin">admin</a></div>
+    }
     <div class="hero_area">
         <!-- header section strats -->
         <header class="header_section">
@@ -30,10 +34,9 @@
         </header>
         @RenderBody()
     </div>
-        <!-- end header section -->
-        <!-- slider section -->
-        <!-- end slider section -->
-   
+    <!-- end header section -->
+    <!-- slider section -->
+    <!-- end slider section -->
     <!-- footer start -->
     <footer>
         <div class="container">
@@ -111,7 +114,7 @@
         <p>© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p>
     </div>
     <!-- jQery -->
-   @* <script src="~/js/jquery-3.4.1.min.js"></script>
+    @* <script src="~/js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
     <script src="~/js/popper.min.js"></script>
     <!-- bootstrap js -->

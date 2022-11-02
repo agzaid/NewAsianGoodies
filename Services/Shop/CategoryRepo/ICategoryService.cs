@@ -12,8 +12,8 @@ namespace Services.Shop.CategoryRepo
     {
         IEnumerable<Category> GetMany(Expression<Func<Category, bool>> expression, List<string> references);
         Task<Category> GetOne(Expression<Func<Category, bool>> expression, List<string> references);
-        Task Insert(Category product);
-        Task Update(Category product);
-        Task Delete(int id);
+        void Insert(Category product);
+        void Update(Category product);
+        void Delete(int id);
     }
 }

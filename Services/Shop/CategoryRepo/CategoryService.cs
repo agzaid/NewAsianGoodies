@@ -16,14 +16,7 @@ namespace Services.Shop.CategoryRepo
         {
             _repository = repository;
         }
-        public async Task Delete(int id)
-        {
-            Category model = await GetOne(s => s.ID == id, null);
-
-            _repository.Delete(model);
-            _repository.SaveChanges();
-        }
-
+        
         public IEnumerable<Category> GetMany(Expression<Func<Category, bool>> expression, List<string> references)
         {
             return _repository.GetAll(expression, references);
@@ -34,24 +27,31 @@ namespace Services.Shop.CategoryRepo
             return await _repository.Get(expression, references);
         }
 
-        public async Task Insert(Category model)
+        public void Insert(Category model)
         {
             if (model is not null)
             {
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
-                await _repository.InsertAsync(model);
+                _repository.Insert(model);
             }
-            await _repository.SaveChangesAsync();
+            _repository.SaveChanges();
         }
 
-        public async Task Update(Category model)
+        public void Update(Category model)
         {
             if (model is not null)
             {
                 _repository.Update(model);
             }
-            await _repository.SaveChangesAsync();
+            _repository.SaveChanges();
+        }
+        public async void Delete(int id)
+        {
+            Category model = await GetOne(s => s.ID == id, null);
+
+            _repository.Delete(model);
+            _repository.SaveChanges();
         }
     }
 }

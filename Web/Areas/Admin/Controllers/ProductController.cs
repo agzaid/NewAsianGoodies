@@ -80,7 +80,7 @@ namespace Web.Areas.Admin.Controllers
                 _productService.Insert(product);
                 Message.Add("Success");
             }
-            return RedirectToAction("index", new { message = Message }); ;
+            return RedirectToAction("index", new { message = Message });
         }
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)

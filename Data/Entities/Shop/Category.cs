@@ -13,7 +13,6 @@ namespace Data.Entities.Shop
         //public string ParentId { get; set; }
         public string Name { get; set; }
         public string ThumbnailImage { get; set; }
-        public bool Published { get; set; }
         [Display(Name="Display Order")]
         public int DisplayOrder { get; set; }
         public RecordStatus Status { get; set; }

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Data.Entities.Shop;
 using Microsoft.AspNetCore.Mvc;
+using Services.Injection;
 using Services.Shop.CategoryRepo;
 using System.Text.Json;
+using Web.Areas.Admin.Models.Shop.CategoryVM;
 
 namespace Web.Areas.Admin.Controllers
 {
@@ -36,8 +38,94 @@ namespace Web.Areas.Admin.Controllers
             return View(categories);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var category = new CreateCategoryViewModel();
+            return View(category);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateCategoryViewModel model)
+        {
+            var Message = new List<string>();
+            if (ModelState.IsValid)
+            {
+                var category = new Category()
+                {
+                    ThumbnailImage = $"/Uploads/Categories/{await model.ThumbnailFormFile.CreateFile("Categories")}",
+                    CreatedDate = DateTime.Now,
+                    DisplayOrder = model.DisplayOrder,
+                    ModifiedDate = DateTime.Now,
+                    Name = model.CategoryName,
+                    Status = model.Status,
+                };
+                _categoryService.Insert(category);
+                Message.Add("Success");
+            }
+            return RedirectToAction("Index", new { message = Message });
+        }
 
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var category = await _categoryService.GetOne(s => s.ID == id, null);
+            var categoryViewModel = _mapper.Map<CreateCategoryViewModel>(category);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(categoryViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditAsync(CreateCategoryViewModel model)
+        {
+            var Message = new List<string>();
+            if (ModelState.IsValid)
+            {
+                var oldModel = await _categoryService.GetOne(s => s.ID == model.ID, null);
+
+                if (model.ThumbnailFormFile is not null)
+                {
+                    FileExtension.DeleteFile(oldModel.ThumbnailImage);
+                    oldModel.ThumbnailImage = $"/Uploads/Categories/{await model.ThumbnailFormFile.CreateFile("Categories")}";
+                }
+
+                oldModel.Name = model.CategoryName;
+                oldModel.Status = model.Status;
+                oldModel.DisplayOrder = model.DisplayOrder;
+
+                _categoryService.Update(oldModel);
+
+                Message.Add("Create Success");
+                return RedirectToAction("Index", new { message = Message });
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var Message = new List<string>();
+            var category = await _categoryService.GetOne(s => s.ID == id, null);
+            var result = FileExtension.DeleteFile(category.ThumbnailImage);
+
+            if (!result.Succeeded)
+            {
+                Message.AddRange(result.Errors);
+                return RedirectToAction("Index", new { message = Message });
+            }
+            _categoryService.Delete(id);
+
+            return RedirectToAction("Index", new { message = Message });
+        }
 
         #region Helper Methods
 
