@@ -46,6 +46,25 @@ $(document).ready(function () {
                     return '<a href="' + '/' + row.id + '" class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1" data-kaj-filter="item_name">' + row.name + '</a><input type="hidden" data-kaj-filter="item_id" value="' + row.id + '">';;
                 }
             },
+        },
+        {
+            targets: -2,
+            data: null,
+            orderable: false,
+            className: 'text-end',
+            render: function (data, type, row) {
+                switch (data) {
+                    case 1:
+                        return '<div class="badge badge-light-success">' + 'Published' + '</div>';
+                    case 2:
+                        return '<div class="badge badge-light-primary">' + 'InActive' + '</div>';
+                    case 3:
+                        return '<div class="badge badge-light-danger">' + 'Deleted' + '</div>';
+                    default:
+                        return '';
+                }
+
+            }
         }
 
         ],
