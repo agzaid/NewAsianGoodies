@@ -8,6 +8,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>D:\Programming\Projects\MVC\New folder</_PublishTargetUrl>
-    <History>True|2022-11-08T15:44:57.5515366Z;True|2022-11-08T17:38:10.7831284+02:00;True|2022-11-08T15:47:12.5008950+02:00;</History>
+    <History>True|2022-11-13T13:09:45.4949651Z;True|2022-11-08T17:44:57.5515366+02:00;True|2022-11-08T17:38:10.7831284+02:00;True|2022-11-08T15:47:12.5008950+02:00;</History>
   </PropertyGroup>
 </Project>
