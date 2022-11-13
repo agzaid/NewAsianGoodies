@@ -46,7 +46,7 @@ namespace Services.Shop.CategoryRepo
             }
             _repository.SaveChanges();
         }
-        public async void Delete(int id)
+        public async Task Delete(int id)
         {
             Category model = await GetOne(s => s.ID == id, null);
 

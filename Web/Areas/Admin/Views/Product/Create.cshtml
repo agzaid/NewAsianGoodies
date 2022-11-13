@@ -141,19 +141,9 @@
                     <label class="form-label">Product Category</label>
                     <!--end::Label-->
                     <!--begin::Select2-->
-                    <select asp-for="CategoryId" class="form-select mb-2" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
-                        <option></option>
-                        <option value="Computers">Computers</option>
-                        <option value="Watches">Watches</option>
-                        <option value="Headphones">Phones</option>
-                        <option value="Footwear">Footwear</option>
-                        <option value="Cameras">Cameras</option>
-                        <option value="Shirts">Shirts</option>
-                        <option value="Household">Household</option>
-                        <option value="Handbags">Handbags</option>
-                        <option value="Wines">Wines</option>
-                        <option value="Sandals">Sandals</option>
-                    </select>
+                    @*<select asp-for="CategoryId" class="form-select mb-2" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
+                    </select>*@
+                    <select asp-for="CategoryId" asp-items="@Model.ListOfCategories" class="form-select mb-2" data-control="select2" data-hide-search="true" data-placeholder="Status Description"></select>
                     <!--end::Select2-->
                     <!--begin::Description-->
                     <div class="text-muted fs-7 mb-7">Add product to a category.</div>
@@ -240,24 +230,24 @@
                                 <!--begin::Input group-->
                                 <div class="fv-row mb-2">
                                     <!--begin::Dropzone-->
-                					<div class="dropzone" id="kt_ecommerce_add_product_media">
-                						<!--begin::Message-->
-                						<div class="dz-message needsclick">
-                							<!--begin::Icon-->
-                							<i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
-                							<!--end::Icon-->
-                							<!--begin::Info-->
-                							<div class="ms-4">
-                								<h3 class="fs-5 fw-bolder text-gray-900 mb-1">
-                									Media Drop Area
-                								</h3>
-                								<span class="fs-7 fw-bold text-gray-400">
-                									Media-DropArea-MaxFiles
-                								</span>
-                							</div>
-                							<!--end::Info-->
-                						</div>
-                					</div>
+                                    <div class="dropzone" id="kt_ecommerce_add_product_media">
+                                        <!--begin::Message-->
+                                        <div class="dz-message needsclick">
+                                            <!--begin::Icon-->
+                                            <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+                                            <!--end::Icon-->
+                                            <!--begin::Info-->
+                                            <div class="ms-4">
+                                                <h3 class="fs-5 fw-bolder text-gray-900 mb-1">
+                                                    Media Drop Area
+                                                </h3>
+                                                <span class="fs-7 fw-bold text-gray-400">
+                                                    Media-DropArea-MaxFiles
+                                                </span>
+                                            </div>
+                                            <!--end::Info-->
+                                        </div>
+                                    </div>
                                     <input asp-for="GalleryFormFiles" type="hidden" />
                                 </div>
                                 <!--end::Input group-->
@@ -285,7 +275,7 @@
                                     <label class="required form-label">Base Price</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input asp-for="Price" class="form-control mb-2" placeholder="Product price" value=""/>
+                                    <input asp-for="Price" class="form-control mb-2" placeholder="Product price" value="" />
                                     <!--end::Input-->
                                     <!--begin::Description-->
                                     <span asp-validation-for="Price" class="text-danger"></span>
@@ -296,7 +286,6 @@
                             <!--end::Card header-->
                         </div>
                         <!--end::Pricing-->
-
                         <!--begin::quantity-->
                         <div class="card card-flush py-4">
                             <!--begin::Card header-->
@@ -314,7 +303,7 @@
                                     <label class="required form-label" asp-for="Quantity"></label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input asp-for="Quantity" class="form-control mb-2" placeholder="Product price" value=""/>
+                                    <input asp-for="Quantity" class="form-control mb-2" placeholder="Product price" value="" />
                                     <!--end::Input-->
                                     <!--begin::Description-->
                                     <span asp-validation-for="Quantity" class="text-danger"></span>
@@ -350,43 +339,43 @@
 
     @section Scripts {
 
-        <script>
-             function file() {
-                return "DocumentPhotos";
-            }
-            $(document).ready(function() {
-                new Dropzone("#kt_ecommerce_add_product_media",
-                    {
-                        url: "@Url.Action("Create","Product")",
-                        method: "post",
-                        autoProcessQueue: false,
-                        paramName: file,
-                        uploadMultiple: true,
-                        maxFiles: 10,
-                        maxFilesize: 10,
-                        addRemoveLinks: !0,
-                        parallelUploads: 100,
-                        init: function() {
-                            console.log("active");
-                            var wrapperThis = this;
-                             //$("#kt_ecommerce_add_product_submit").click(
-                                $('#productForm').submit(function(e) {
-                               // e.preventDefault();
-                                debugger;
-                                var arr = [];
-                                wrapperThis.files.forEach(s => arr.push(s.dataURL));
-                                //$('#GalleryFormFiles').val(arr);
-                                //arr.forEach(s =>document.createElement('input').setAttribute("Id","GalleryImages").value(s));
-                                arr.forEach(function(val, i) {
-                                    $('#kt_ecommerce_add_product_media').append(`<input type="hidden" name="RawGalleryImages[`+i+`]" value="`+val+`">'`)
-                                });
+    <script>
+        function file() {
+            return "DocumentPhotos";
+        }
+        $(document).ready(function() {
+            new Dropzone("#kt_ecommerce_add_product_media",
+                {
+                    url: "@Url.Action("Create","Product")",
+                    method: "post",
+                    autoProcessQueue: false,
+                    paramName: file,
+                    uploadMultiple: true,
+                    maxFiles: 10,
+                    maxFilesize: 10,
+                    addRemoveLinks: !0,
+                    parallelUploads: 100,
+                    init: function() {
+                        console.log("active");
+                        var wrapperThis = this;
+                        //$("#kt_ecommerce_add_product_submit").click(
+                        $('#productForm').submit(function(e) {
+                            // e.preventDefault();
+                            debugger;
+                            var arr = [];
+                            wrapperThis.files.forEach(s => arr.push(s.dataURL));
+                            //$('#GalleryFormFiles').val(arr);
+                            //arr.forEach(s =>document.createElement('input').setAttribute("Id","GalleryImages").value(s));
+                            arr.forEach(function(val, i) {
+                                $('#kt_ecommerce_add_product_media').append(`<input type="hidden" name="RawGalleryImages[` + i + `]" value="` + val + `">'`)
                             });
-                        },
-                        accept: function(e, t) {
-                            "wow.jpg" == e.name ? t("Naha, you don't.") : t()
-                        }
-                    });
-            });
-        </script>
+                        });
+                    },
+                    accept: function(e, t) {
+                        "wow.jpg" == e.name ? t("Naha, you don't.") : t()
+                    }
+                });
+        });
+    </script>
     }
 

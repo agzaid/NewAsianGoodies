@@ -14,6 +14,6 @@ namespace Services.Shop
         Task<Product> GetOne(Expression<Func<Product, bool>> expression, List<string> references);
         void Insert(Product product);
         void Update(Product product);
-        void Delete(int id);
+        Task Delete(int id);
     }
 }

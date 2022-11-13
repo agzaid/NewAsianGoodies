@@ -9,7 +9,7 @@ namespace Services
 {
     public static class BackOfficeAppConfiguration
     {
-        public static async void AddBackOfficeAppServicesConfiguration(this IServiceCollection services,string uiNameSpace)
+        public static async Task AddBackOfficeAppServicesConfiguration(this IServiceCollection services,string uiNameSpace)
         {
             LocalizationConfigurationServices(services, uiNameSpace);
         }

@@ -78,8 +78,11 @@ $(document).ready(function () {
     }
     function myToastr(message) {
         switch (message) {
-            case "Success":
+            case "Create":
                 toastr.success('Created Successfully');
+                break;
+            case "Edit":
+                toastr.success('Edited Successfully');
                 break;
             case "Error":
                 toastr.error('Failed');
@@ -89,7 +92,7 @@ $(document).ready(function () {
                 break;
 
             default:
-                toastr.info('Are you the 6 fingered man?')
+                toastr.info('Are you the 6 fingered man?');
         }
     }
 

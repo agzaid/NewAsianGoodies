@@ -17,11 +17,11 @@ namespace Services.Shop
         {
             this.repository = repository;
         }
-        public async void Delete(int id)
+        public async Task Delete(int id)
         {
             Product model = await GetOne(s => s.ID == id, null);
 
-            repository.Delete(model);
+            await repository.DeleteAsync(model);
             repository.SaveChanges();
         }
 

@@ -42,6 +42,7 @@ namespace Web.Areas.Admin.Models.Shop
         public List<string> DeleteGalleyImages { get; set; } = new();
 
         public List<SelectListItem> ListOfStatus { get; set; } = new();
+        public List<SelectListItem> ListOfCategories { get; set; } = new();
 
         public Category Category { get; set; }
         public int CategoryId { get; set; }

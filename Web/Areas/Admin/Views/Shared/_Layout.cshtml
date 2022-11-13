@@ -148,7 +148,7 @@
                         <!--end::Aside toggle-->
                     </div>
                     <!--end::Brand-->
-                   
+
                 </div>
                 <!--end::Header-->
                 <!--begin::Content-->
@@ -183,5 +183,18 @@
     <script src="~/Admin/assets/js/scripts.bundle.js"></script>
     @await Html.PartialAsync("_ToasterPartial")
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        $(document).ready(function() {
+            var clickNum = 0;
+            $('button[type = submit]').click(function(event) {
+                debugger;
+                clickNum++;
+                if (clickNum > 0) {
+                    $('input[type=submit]').prop("disabled");
+                }
+            })
+        })
+    </script>
 </body>
 </html>

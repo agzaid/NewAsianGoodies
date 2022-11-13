@@ -9,6 +9,7 @@ using System.Linq;
 using Web.Areas.Admin.Models.Shop;
 using System.Text.Json;
 using Web.Areas.Admin.Models.Shop.product;
+using Services.Shop.CategoryRepo;
 
 namespace Web.Areas.Admin.Controllers
 {
@@ -17,11 +18,13 @@ namespace Web.Areas.Admin.Controllers
     {
         private readonly IProductService _productService;
         private readonly IMapper _mapper;
+        private readonly ICategoryService _categoryService;
 
-        public ProductController(IProductService productService, IMapper mapper)
+        public ProductController(IProductService productService, IMapper mapper, ICategoryService categoryService)
         {
             _productService = productService;
             _mapper = mapper;
+            _categoryService = categoryService;
         }
 
         public IActionResult Index(List<string> message)
@@ -32,7 +35,7 @@ namespace Web.Areas.Admin.Controllers
             }
             var products = _productService.GetMany(s => true, new List<string>() { "Category" });
 
-            
+
 
             var columns = new List<string>()
             {
@@ -54,6 +57,12 @@ namespace Web.Areas.Admin.Controllers
         public IActionResult Create()
         {
             var product = new CreateProductViewModel();
+            var categories = _categoryService.GetMany(s => true, null);
+            product.ListOfCategories = categories.Select(s => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem()
+            {
+                Text = s.Name,
+                Value = s.ID.ToString(),
+            }).ToList();
             return View(product);
         }
         [HttpPost]
@@ -76,7 +85,7 @@ namespace Web.Areas.Admin.Controllers
                     Status = model.Status,
                 };
                 _productService.Insert(product);
-                Message.Add("Success");
+                Message.Add("Create");
             }
             return RedirectToAction("index", new { message = Message });
         }
@@ -120,7 +129,7 @@ namespace Web.Areas.Admin.Controllers
 
                 _productService.Update(oldModel);
 
-                Message.Add("Create Success");
+                Message.Add("Edited");
                 return RedirectToAction("Index", new { message = Message });
             }
             return View(model);
@@ -130,14 +139,16 @@ namespace Web.Areas.Admin.Controllers
         {
             var Message = new List<string>();
             var product = await _productService.GetOne(s => s.ID == id, null);
-            var result = FileExtension.DeleteFile(product.ThumbnailImage);
 
-            if (!result.Succeeded)
+            if (product is not null)
             {
+                await _productService.Delete(id);
+                var result = FileExtension.DeleteFile(product.ThumbnailImage);
                 Message.AddRange(result.Errors);
                 return RedirectToAction("Index", new { message = Message });
             }
-            _productService.Delete(id);
+            else
+                Message.Add("Delete");
 
             return RedirectToAction("Index", new { message = Message });
         }
@@ -162,6 +173,7 @@ namespace Web.Areas.Admin.Controllers
             {
                 ID = s.ID,
                 Name = s.ProductName,
+                Price = s.Price,
                 DisplayOrder = s.DisplayOrder,
                 Quantity = s.Quantity,
                 Status = s.Status,

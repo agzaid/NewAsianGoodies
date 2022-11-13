@@ -14,6 +14,6 @@ namespace Services.Shop.CategoryRepo
         Task<Category> GetOne(Expression<Func<Category, bool>> expression, List<string> references);
         void Insert(Category product);
         void Update(Category product);
-        void Delete(int id);
+        Task Delete(int id);
     }
 }

@@ -62,7 +62,7 @@ namespace Web.Areas.Admin.Controllers
                     Status = model.Status,
                 };
                 _categoryService.Insert(category);
-                Message.Add("Success");
+                Message.Add("Create");
             }
             return RedirectToAction("Index", new { message = Message });
         }
@@ -105,7 +105,7 @@ namespace Web.Areas.Admin.Controllers
 
                 _categoryService.Update(oldModel);
 
-                Message.Add("Create Success");
+                Message.Add("Edited");
                 return RedirectToAction("Index", new { message = Message });
             }
             return View(model);
@@ -115,14 +115,15 @@ namespace Web.Areas.Admin.Controllers
         {
             var Message = new List<string>();
             var category = await _categoryService.GetOne(s => s.ID == id, null);
-            var result = FileExtension.DeleteFile(category.ThumbnailImage);
-
-            if (!result.Succeeded)
+            if (category is not null)
             {
+                await _categoryService.Delete(id);
+                var result = FileExtension.DeleteFile(category.ThumbnailImage);
                 Message.AddRange(result.Errors);
                 return RedirectToAction("Index", new { message = Message });
             }
-            _categoryService.Delete(id);
+            else
+                Message.Add("Delete");
 
             return RedirectToAction("Index", new { message = Message });
         }
