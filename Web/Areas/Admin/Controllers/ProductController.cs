@@ -96,8 +96,16 @@ namespace Web.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+
+            var model = new CreateProductViewModel();
             var product = await _productService.GetOne(s => s.ID == id, null);
+            var categories = _categoryService.GetMany(s => true, null);
             var productViewModel = _mapper.Map<CreateProductViewModel>(product);
+            productViewModel.ListOfCategories = categories.Select(s => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem()
+            {
+                Text = s.Name,
+                Value = s.ID.ToString(),
+            }).ToList();
 
             if (product == null)
             {
@@ -126,6 +134,7 @@ namespace Web.Areas.Admin.Controllers
                 oldModel.Status = model.Status;
                 oldModel.Quantity = model.Quantity;
                 oldModel.DisplayOrder = model.DisplayOrder;
+                oldModel.CategoryId= model.CategoryId;
 
                 _productService.Update(oldModel);
 
@@ -144,11 +153,15 @@ namespace Web.Areas.Admin.Controllers
             {
                 await _productService.Delete(id);
                 var result = FileExtension.DeleteFile(product.ThumbnailImage);
-                Message.AddRange(result.Errors);
+                if (result.Errors.Count > 0)
+                {
+                    Message.AddRange(result.Errors);
+                }
+                else
+                    Message.Add("DeleteTrue");
+
                 return RedirectToAction("Index", new { message = Message });
             }
-            else
-                Message.Add("Delete");
 
             return RedirectToAction("Index", new { message = Message });
         }

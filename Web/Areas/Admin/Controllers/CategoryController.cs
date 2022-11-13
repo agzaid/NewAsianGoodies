@@ -114,18 +114,31 @@ namespace Web.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var Message = new List<string>();
-            var category = await _categoryService.GetOne(s => s.ID == id, null);
-            if (category is not null)
+            try
             {
-                await _categoryService.Delete(id);
-                var result = FileExtension.DeleteFile(category.ThumbnailImage);
-                Message.AddRange(result.Errors);
-                return RedirectToAction("Index", new { message = Message });
-            }
-            else
-                Message.Add("Delete");
+                var category = await _categoryService.GetOne(s => s.ID == id, new List<string> { "Products" });
+                if (category is not null)
+                {
+                    await _categoryService.Delete(id);
+                    var result = FileExtension.DeleteFile(category.ThumbnailImage);
+                    if (result.Errors.Count > 0)
+                    {
+                        Message.AddRange(result.Errors);
+                    }
+                    else
+                        Message.Add("DeleteTrue");
 
+                    return RedirectToAction("Index", new { message = Message });
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Message.Add(ex.Message);
+                throw;
+            }
             return RedirectToAction("Index", new { message = Message });
+
         }
 
         #region Helper Methods
