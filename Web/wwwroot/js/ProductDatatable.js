@@ -66,7 +66,6 @@ $(document).ready(function () {
 
             }
         }
-
         ],
         "columns": columnsRendered
     });
@@ -87,12 +86,12 @@ $(document).ready(function () {
             case "Error":
                 toastr.error('Failed');
                 break;
-            case "":
-                toastr.warning('Empty');
+            case "Delete":
+                toastr.warning('Delete invalid');
                 break;
 
             default:
-                toastr.info('Are you the 6 fingered man?');
+                toastr.info('Empty');
         }
     }
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nwrbL1C4/XOaOTksWkK86s4D37N4q2NEt2v7A0QxxyU=",
+  "Hash": "XHqdfjfSNNuVbBEn9Dya92VsFhmDsGmXGiCASusOFL8=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -17,10 +17,10 @@
   ],
   "Assets": [
     {
-      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\win-x64\\scopedcss\\bundle\\Web.styles.css",
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\scopedcss\\bundle\\Web.styles.css",
       "SourceId": "Web",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\win-x64\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Web",
       "RelativePath": "Web.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\win-x64\\scopedcss\\bundle\\Web.styles.css"
+      "OriginalItemSpec": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\scopedcss\\bundle\\Web.styles.css"
     },
     {
-      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\win-x64\\scopedcss\\projectbundle\\Web.bundle.scp.css",
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Web.bundle.scp.css",
       "SourceId": "Web",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\win-x64\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Web",
       "RelativePath": "Web.bundle.scp.css",
       "AssetKind": "All",
@@ -48,7 +48,7 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\win-x64\\scopedcss\\projectbundle\\Web.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Web.bundle.scp.css"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Admin\\assets\\css\\Site.css",
@@ -12342,6 +12342,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.css"
     },
     {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\css\\detailsCard.css",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "css/detailsCard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\detailsCard.css"
+    },
+    {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\css\\font-awesome.min.css",
       "SourceId": "Web",
       "SourceType": "Discovered",
@@ -14501,6 +14518,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Categories\\53dcdb98-ee10-4a69-bb9b-8b4b197b779a.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "Uploads/Categories/53dcdb98-ee10-4a69-bb9b-8b4b197b779a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Categories\\53dcdb98-ee10-4a69-bb9b-8b4b197b779a.jpg"
+    },
+    {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\16abdce1-b746-4daa-89ec-ed0f7b2ed686.png",
       "SourceId": "Web",
       "SourceType": "Discovered",
@@ -14516,23 +14550,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Products\\16abdce1-b746-4daa-89ec-ed0f7b2ed686.png"
-    },
-    {
-      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\29d7e038-1bee-45b0-a9ef-63f4d86b07e5.png",
-      "SourceId": "Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
-      "BasePath": "_content/Web",
-      "RelativePath": "Uploads/Products/29d7e038-1bee-45b0-a9ef-63f4d86b07e5.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Products\\29d7e038-1bee-45b0-a9ef-63f4d86b07e5.png"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\480b25e5-d250-4dd3-bb07-7845d0f57726.png",
