@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4JssaXCnaEjdSGFb9QJLTxHC0vIy+GUifx/9dzDC88o=",
+  "Hash": "sm05CwVBy9PtNUovmh14laNEujH4T+31ugWh5eZ00uI=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -14518,12 +14518,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Categories\\9529d5ec-dcf8-4f1e-a0ed-0acbddd5b0bb.png",
+      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Categories\\14edfe19-8631-474b-9af1-ef1508e5f326.jpg",
       "SourceId": "Web",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
       "BasePath": "_content/Web",
-      "RelativePath": "Uploads/Categories/9529d5ec-dcf8-4f1e-a0ed-0acbddd5b0bb.png",
+      "RelativePath": "Uploads/Categories/14edfe19-8631-474b-9af1-ef1508e5f326.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -14532,7 +14532,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Categories\\9529d5ec-dcf8-4f1e-a0ed-0acbddd5b0bb.png"
+      "OriginalItemSpec": "wwwroot\\Uploads\\Categories\\14edfe19-8631-474b-9af1-ef1508e5f326.jpg"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Categories\\9fa95514-d56b-4164-aed0-79a9dcbed8fc.jpg",
@@ -14550,23 +14550,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Categories\\9fa95514-d56b-4164-aed0-79a9dcbed8fc.jpg"
-    },
-    {
-      "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Categories\\a71fe0a1-6a20-4bf9-a8b7-75c95c4b85fa.jpg",
-      "SourceId": "Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\",
-      "BasePath": "_content/Web",
-      "RelativePath": "Uploads/Categories/a71fe0a1-6a20-4bf9-a8b7-75c95c4b85fa.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Categories\\a71fe0a1-6a20-4bf9-a8b7-75c95c4b85fa.jpg"
     },
     {
       "Identity": "D:\\Programming\\Projects\\MVC\\NewAsianGoodies\\Web\\wwwroot\\Uploads\\Products\\16abdce1-b746-4daa-89ec-ed0f7b2ed686.png",
