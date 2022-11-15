@@ -10,6 +10,8 @@ using System.Reflection;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Rewrite;
+using Microsoft.AspNetCore.Identity;
+using Data.Entities.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,11 @@ builder.Services.AddDbContext<ApplicationDBContext>(
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+{
+    options.User.RequireUniqueEmail = true;
+}).AddEntityFrameworkStores<ApplicationDBContext>();
+
 
 //builder.Services.AddSingleton<LocService>();
 builder.Services.AddLocalization(opt => opt.ResourcesPath = "Resources");
@@ -56,7 +63,7 @@ builder.Services.Configure<RouteOptions>(options =>
     options.ConstraintMap.Add("culture", typeof(LanguageRouteConstraint));
 });
 
-builder.Services.AddBackOfficeAppServicesConfiguration("KAJ.Web.BackOffice");
+await builder.Services.AddBackOfficeAppServicesConfiguration("KAJ.Web.BackOffice");
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
@@ -78,6 +85,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseRewriter(new RewriteOptions().Add(RewriteRules.RedirectRequests));
 var localizationOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();

@@ -18,6 +18,7 @@ namespace Data.Mapping
         public static void MapProduct(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasKey(s => s.ID);
+            modelBuilder.Entity<Product>().HasOne(s => s.Category).WithMany(b => b.Products);
         }
         public static void MapCategory(this ModelBuilder modelBuilder)
         {

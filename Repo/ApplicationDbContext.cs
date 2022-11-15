@@ -25,6 +25,7 @@ namespace Repo
         //    optionsBuilder.UseSqlServer("Server=.; Database=AsianG_DB;Trusted_Connection=True;");
         //}
         #endregion
+        public DbSet<AppUser> AppUser { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
         //public DbSet<Order> Product { get; set; }
@@ -34,11 +35,11 @@ namespace Repo
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             base.OnModelCreating(modelbuilder);
-            //modelbuilder.MapCustomer();
-            //modelbuilder.MapUser();
-            //modelbuilder.MapOrder();
+            modelbuilder.MapUser();
             modelbuilder.MapProduct();
-            //modelbuilder.MapCategory();
+            modelbuilder.MapCategory();
+            //modelbuilder.MapCustomer();
+            //modelbuilder.MapOrder();
             //modelbuilder.MapOrderDetails();
         }
         public override int SaveChanges()
